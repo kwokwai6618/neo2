@@ -1,4 +1,4 @@
-name: neo2-8-12-2019
+name: neo2-8-12-2019v2
 
 on:
   push:
@@ -29,7 +29,7 @@ jobs:
         cd /home/runner/lede/package/lean
         rm -rf luci-theme-argon
         git clone https://github.com/jerrykuku/luci-theme-argon.git
-        sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' '/home/ubuntu/neo2/lede/feeds/luci/collections/luci/Makefile'
+        sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' '/home/runner/lede/feeds/luci/collections/luci/Makefile'
     - name: Clone Adguardhome
       run: |
         cd /home/runner/lede/package/lean
@@ -38,7 +38,7 @@ jobs:
     - name: Clone config
       run: |
         cd /home/runner/lede/
-        wget https://raw.githubusercontent.com/wky0211/build-test/master/.config
+        wget https://raw.githubusercontent.com/kwokwai6618/neo2/master/.config
     - name: Build
       run: | 
         cd /home/runner/lede 
